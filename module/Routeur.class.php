@@ -35,6 +35,7 @@ class Routeur
         return isset($this->_Parametres[$nomParametre]) ? $this->_Parametres[$nomParametre] : null;
     }
 
+    // les parametres ont été construit dans le tableau
     public function getParametres()
     {
         return $this->_Parametres;
@@ -65,9 +66,11 @@ class Routeur
 
                 case 'verificationReponse':
                 $verification = new \controleur\VerificationEnigme();
-
+                // je recupere le parametre du formulaire par le this parametre
                 if($verification->verificationEnigme($this->getParametre('tentativeReponse'))){
                     $tabRoute['vue'] = 'reponse';
+                }else{
+                    $tabRoute['valeurs']['EnigmeErr'] = $verification->getverificationEnigmeErr();
                 }
                
                     break;

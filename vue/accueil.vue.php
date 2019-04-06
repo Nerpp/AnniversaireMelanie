@@ -17,6 +17,7 @@
         <div class="form-group" method="post" action="index.php">
             <input type="text" class="form-control" id="reponse" aria-describedby="reponse" placeholder="Ecris ta solution" name="tentativeReponse">
             <small id="reponseHelp" class="form-text text-muted">Je risque mes puces si tu te trompe</small>
+            <span class="error"> <?php echo isset($routeur['valeurs']['EnigmeErr']) ? $routeur['valeurs']['EnigmeErr'] : null; ?></span>
         </div>
         <input type="submit" class="btn btn-primary" value='Es tu Sûre de ta réponse ?'>
         <input type="hidden" name="page" id="page" value="verificationReponse">
