@@ -14,11 +14,12 @@
 
 <body>
     <form>
-        <div class="form-group">
-            <input type="text" class="form-control" id="reponse" aria-describedby="emailHelp" placeholder="Ecrit ta solution">
+        <div class="form-group" method="post" action="index.php">
+            <input type="text" class="form-control" id="reponse" aria-describedby="reponse" placeholder="Ecris ta solution" name="tentativeReponse">
             <small id="reponseHelp" class="form-text text-muted">Je risque mes puces si tu te trompe</small>
         </div>
-        <button type="submit" class="btn btn-primary">Es tu Sure de ta Reponse</button>
+        <input type="submit" class="btn btn-primary" value='Es tu Sûre de ta réponse ?'>
+        <input type="hidden" name="page" id="page" value="verificationReponse">
     </form>
 
 </body>

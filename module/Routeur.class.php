@@ -14,6 +14,10 @@ class Routeur
         'accueil' => [
             'page'  => 'accueil',
             'vue'   => 'accueil'
+        ],
+        'verificationReponse'=>[
+            'page' => 'verificationReponse',
+            'vue'  => 'reponse'
         ]
     ];
 
@@ -35,7 +39,7 @@ class Routeur
     {
         return $this->_Parametres;
     }
-
+    
 
     public function getRoute($page)
     {
@@ -50,6 +54,7 @@ class Routeur
                 'valeurs' => $this->_ValeursVue
             ];
 
+           
 
             $route = $this->getRoute($this->getParametre('page'));
             switch ($route['page']) {
@@ -57,6 +62,15 @@ class Routeur
                 case 'accueil':
                 $tabRoute['vue'] = $route['vue'];
                         break;
+
+                case 'verificationReponse':
+                $verification = new \controleur\VerificationEnigme();
+
+                if($verification->verificationEnigme($this->getParametre('tentativeReponse'))){
+                    $tabRoute['vue'] = 'reponse';
+                }
+               
+                    break;
 
             }
             return $tabRoute;

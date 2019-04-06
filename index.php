@@ -4,6 +4,7 @@ header($_SERVER["SERVER_PROTOCOL"] . " 404 Not Found");
 header('Content-Type: text/html; charset=utf-8');
 
 // Chargement des dépendances
+require_once 'controleur/VerificationEnigme.class.php';
 
 require_once 'module/recuperationUrl.class.php';
 require_once 'module/routeur.class.php';
@@ -11,6 +12,7 @@ require_once 'module/securite.class.php';
 
 
 // Espaces de nom utilisés
+use controleur\VerificationEnigme;
 
 use module\RecuperationUrl;
 use module\Routeur;
@@ -28,6 +30,7 @@ $parametres['page']     = '';
 //Initialisation classes a utiliser
 $chargementUrl       = new RecuperationUrl();
 $filtreUrl           = new Securite();
+$verification        = new RecuperationUrl();
 
 
 
@@ -44,6 +47,7 @@ $filtreUrl           = new Securite();
 
     $urlRouter = new Routeur($parametres);
     $routeur = $urlRouter->resolutionRoute();
+
 
     /**
      * Appel à la vue correspondante
