@@ -1,14 +1,15 @@
 <?php
 session_start();
+//en cas d'exception j'affiche erreur 404 au client
 header($_SERVER["SERVER_PROTOCOL"] . " 404 Not Found");
 header('Content-Type: text/html; charset=utf-8');
 
 // Chargement des dépendances
 require_once 'controleur/VerificationEnigme.class.php';
 
-require_once 'module/recuperationUrl.class.php';
-require_once 'module/routeur.class.php';
-require_once 'module/securite.class.php';
+require_once 'module/RecuperationUrl.class.php';
+require_once 'module/Routeur.class.php';
+require_once 'module/Securite.class.php';
 
 
 // Espaces de nom utilisés

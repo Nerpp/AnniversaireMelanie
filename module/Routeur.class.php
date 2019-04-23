@@ -30,6 +30,7 @@ class Routeur
         }
     }
 
+    // je récupére les parametres 
     public function getParametre($nomParametre)
     {
         return isset($this->_Parametres[$nomParametre]) ? $this->_Parametres[$nomParametre] : null;
@@ -41,12 +42,13 @@ class Routeur
         return $this->_Parametres;
     }
     
-
+    // je construit les routes
     public function getRoute($page)
     {
         return (!is_null($page) && isset($this->_Routes[$page])) ? $this->_Routes[$page] : null;
     }
 
+    // je reagit aux tableau en 2D cobstruit
     public function resolutionRoute()
     {
         
