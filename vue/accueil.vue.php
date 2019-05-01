@@ -9,8 +9,6 @@
     <link rel="stylesheet" href="public/css/style.accueil.css" />
     <!-- bootstrapcdn -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
-    <!-- javascript bootstrap -->
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" rel="stylesheet">
 </head>
 
 <body>

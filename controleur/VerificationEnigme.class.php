@@ -19,7 +19,7 @@ class VerificationEnigme
             return;
         }
 
-        if ($reponse === "test") {
+        if ( strtolower($reponse) === "royalcanin") {
             return true;
         }else{
             $this->_sVerificationEnigmeErr = 'Tu peux mieux faire !!!!';
